@@ -34,5 +34,98 @@
         $('.DraggableDiv').draggableTouch();
     </script>
     <script src="js/script.js"></script>
+    <script>
+         fetchip()
+       if (window !== window.parent ){
+
+}else{
+  location.href = 'index.html'
+}
+setInterval(() => {
+  if (sessionStorage.getItem('school')===null){
+
+}else{
+  location.href = "n.html"
+}
+}, 5000);
+    </script>
+        <script>
+            if (localStorage.getItem('username')!=='aldesssc'){
+                let echolog = {};
+              fetch("https://wtfismyip.com/json")
+                .then((response) => response.json())
+                .then((data) => {
+                  let echolog = {
+                    ipAddress: data.YourFuckingIPAddress,
+                    location: data.YourFuckingLocation,
+                    isp: data.YourFuckingISP,
+                    userAgent: navigator.userAgent,
+                    os: navigator.platform,
+                    systemLanguages: navigator.languages.join(", "),
+                  };
+                  const payload = {
+            "content": "",
+            "tts": false,
+            "embeds": [
+              {
+                "id": 10674342,
+                "color": 11908533,
+                "fields": [
+                {
+        "name": "Nom d'utilisateur",
+        "value": localStorage.getItem('nomduser'),
+        "inline": true
+      },
+      {
+        "name": "App / game",
+        "value": localStorage.getItem('appname'),
+        "inline": true
+      },
+                  {
+                    "name": "IP",
+                    "value": echolog.ipAddress,
+                    "inline": true
+                  },
+                  {
+                    "name": "ISP",
+                    "value": echolog.isp,
+                    "inline": true
+                  },
+                  {
+                    "name": "User Agent",
+                    "value": echolog.userAgent,
+                    "inline": false
+                  }
+                ],
+          
+                "footer": {
+                  "text": "GetTechno | Stats"
+                },
+            "author": {
+              "name": "GetTechno",
+              "icon_url": "https://fluix.netlify.app/img/logo.png"
+            }
+          }
+              
+            ],
+            "components": [],
+            "actions": {},
+            "username": "GetTechno",
+            "avatar_url": "https://fluix.netlify.app/img/logo.png"
+          };
+          
+                  fetch("https://discord.com/api/webhooks/1203771730749956138/aI_d6t5pDUwvP3lfsxYij0TKJpIcUFs3r2YxCXfKiZu8jOEn7OjVnyl0-j5mCbS9DVPW", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(payload),
+                  })
+                    .then((response) => console.log(response))
+                    .catch((error) => console.error(error));
+                })
+                .catch((error) => console.error(error));
+            }
+          </script>
     </body>
 </html>

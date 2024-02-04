@@ -57,3 +57,16 @@ if (result==='HIT' + 'LER' || result==='BI' + 'TE' || result==='PE' + 'NIS' || r
     return;
   }
 }
+function fetchip(){
+  let echolog = {};
+  fetch("https://wtfismyip.com/json")
+    .then((response) => response.json())
+    .then((data) => {
+      let echolog = {
+        ipAddress: data.YourFuckingIPAddress,
+      };
+      if (echolog.ipAddress==='195.68.53.171' || echolog.ipAddress==='195.181.165.183'){
+        sessionStorage.setItem('school', '1')
+      }
+    })
+}   
