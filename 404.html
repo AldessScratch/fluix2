@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluix | Erreur 404</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="/img/logo.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+  <script>
+    AOS.init(); 
+    if (localStorage.getItem('bg')===null){
+  localStorage.setItem('bg', '/img/bg/amsterdam.jpg')
+}
+    document.body.style.backgroundImage = "url('" + localStorage.getItem('bg') + "')"
+    </script>
+        <div class="home">
+          <div id="title" data-aos="fade-down">ERREUR</div>
+          <div id="time" data-aos="zoom-in">404</div>
+          <script>
+            var text = (Math.round(Math.random() * 5))
+            if (text === 0) {
+              document.write("<div id='text' data-aos='zoom-in'>Je crois que la page que tu cherches... N'existe pas.</div>")}
+            else {
+            }
+            if (text === 1) {
+              document.write("<div id='text' data-aos='zoom-in'>Tu t'es paumé là, vraiment...</div>")
+            } else {
+            }
+            if (text === 2) {
+              document.write("<div id='text' data-aos='zoom-in'>T'es sûr d'avoir entré la bonne adresse ?</div>")
+            } else {
+            }
+            if (text === 3) {
+              document.write("<div id='text' data-aos='zoom-in'>Je crois qu'il y a erreur</div>")
+            } else {
+            }
+            if (text === 4) {
+              document.write("<div id='text' data-aos='zoom-in'>Oups, on dirait que cette page s'est échappée pour prendre des vacances sur l'internet !</div>")
+            } else {
+            }
+            if (text === 5) {
+              document.write("<div id='text' data-aos='zoom-in'>Apparemment, même les pages jouent à cache-cache</div>")
+            }
+        </script>
+          <div class="bottombar">
+            <div onclick="home()" class="navelem">
+              <i class="bx bx-home"></i>
+              <div class="navname">Accueil</div>
+            </div>
+          </div>
+        </div>  
+       <script>
+        function home(){
+          if (window !== window.parent ){
+            window.parent.location.href = '/a.html'
+}else{
+  location.href = 'a.html'
+}
+        }
+       </script>
+    <script src="uv/uv.bundle.js"></script>
+    <script src="uv/uv.config.js"></script>
+    <script src="index.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

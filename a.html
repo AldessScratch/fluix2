@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluix</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="./img/logo.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+  <script>
+    if (sessionStorage.getItem('school')==='1' || localStorage.getItem('banned')==='1'){
+						location.href = 'n.html'
+					}
+    AOS.init(); 
+    if (localStorage.getItem('bg')===null){
+  localStorage.setItem('bg', '/img/bg/amsterdam.jpg')
+}
+    document.body.style.backgroundImage = "url('" + localStorage.getItem('bg') + "')"
+    </script>
+<div class="topsection">
+  <div class="left" data-aos="fade-right">
+    <div id="heure"><span id="hm"></span><span id="sec"></span></div>
+    <div id="date"></div>
+  </div>  
+  <div class="right" data-aos="fade-left">
+    <div class="welcometext">Bienvenue, <span id="username"></span></div>
+    <div class="searchapp">
+    </div>
+  </div>
+</div>
+        <div class="home" id="home">
+          <div class="topsection">
+            <div class="right" data-aos="fade-left">
+              <div class="searchapp">
+                <form id="uv-form" class="flex-center">
+                  <input id="uv-address" placeholder="Rechercher sur le Web..." />
+                </form>
+              </div>
+            </div>
+          </div>
+          <div id="title" data-aos="fade-down">FLUIX</div>
+          <script>
+            if (localStorage.getItem('title')!==null){
+  document.getElementById('title').innerHTML = localStorage.getItem('title')
+}
+          </script>
+          <div id="time" data-aos="zoom-in"></div>
+        </div>  
+
+
+
+
+
+
+        <div class="home" id="jeux" style="display: none;">
+          <div class="topsection">
+            <div class="right" data-aos="fade-left">
+              <div class="searchapp">
+                <input type="text" onkeyup="searchFunction(this)" placeholder="Rechercher un jeu...">
+            </div>
+            </div>
+          </div>
+          <div class="apps" data-aos="fade-up">
+            <div class="app" onclick="openiniframe('games/2048')">
+              <div class="img">
+                <img src="img/games/2048.jpg">
+              </div>
+              <div class="navname">2048</div>
+            </div>
+            <div class="app" onclick="openiniframe('games/connect4')">
+              <div class="img">
+                <img src="img/games/connect4.png">
+              </div>
+              <div class="navname">Connect 4</div>
+            </div>
+            <div class="app" onclick="openiniframe('games/connectai')">
+              <div class="img">
+                <img src="img/games/connectai.png">
+              </div>
+              <div class="navname">Connect AI</div>
+            </div>
+            <div class="app" onclick="openiniframe('games/drawthehill')">
+              <div class="img">
+                <img src="img/games/drawthehill.JPG">
+              </div>
+              <div class="navname">Draw The Hill</div>
+            </div>
+            <div class="app" onclick="openiniframe('games/geodash')">
+              <div class="img">
+                <img src="img/games/geodash.png">
+              </div>
+              <div class="navname">Geometry Dash</div>
+            </div>
+            <div class="app" onclick="openiniframe('games/gettingoverit')">
+              <div class="img">
+                <img src="img/games/gettingoverit.png">
+              </div>
+              <div class="navname">Getting Over It</div>
+            </div>
+            <div class="app" onclick="openiniframe('games/gobo')">
+              <div class="img">
+                <img src="img/games/gobo.png">
+              </div>
+              <div class="navname">Gobo's World</div>
+            </div>
+            <div class="app" onclick="openiniframe('games/minigolf')">
+              <div class="img">
+                <img src="img/games/minigolf.png">
+              </div>
+              <div class="navname">Mini Golf</div>
+            </div>
+      
+            <div class="app" onclick="openiniframe('games/pico')">
+              <div class="img">
+                <img src="img/games/pico.png">
+              </div>
+              <div class="navname">Pico's World</div>
+            </div>
+            <div class="app" onclick="openproxy('https://sandspiel.club')">
+              <div class="img">
+                <img src="img/games/sandspiel.JPG">
+              </div>
+              <div class="navname">SandSpiel</div>
+            </div>
+            <div class="app" onclick="openiniframe('404.html')">
+              <div class="img">
+                <img src="img/games/stack.png">
+              </div>
+              <div class="navname">Stack</div>
+            </div>
+            <div class="app" onclick="openiniframe('games/stickman')">
+              <div class="img">
+                <img src="img/games/stickman.png">
+              </div>
+              <div class="navname">Stickman Hook</div>
+            </div>
+            <div class="app" onclick="openiniframe('games/wave')">
+              <div class="img">
+                <img src="img/games/wave.png">
+              </div>
+              <div class="navname">Wave</div>
+            </div>
+          </div>
+        </div>  
+
+
+        <div class="home" id="apps" style="display: none;">
+          <div class="topsection">
+            <div class="right" data-aos="fade-left">
+              <div class="searchapp">
+                <input type="text" onkeyup="searchFunction(this)" placeholder="Rechercher une app...">
+            </div>
+            </div>
+          </div>
+          <div class="apps" data-aos="fade-up">
+            <div class="app" onclick="openproxy('http://bing.com/')">
+              <div class="img">
+                <img src="img/apps/bing.jpg">
+              </div>
+              <div class="navname">Bing</div>
+            </div>
+            <div class="app" onclick="openproxy('http://discord.com/app')">
+              <div class="img">
+                <img src="img/apps/discord.jpg">
+              </div>
+              <div class="navname">Discord</div>
+            </div>
+            <div class="app" onclick="openproxy('https://www.youtube.com/?gl=fr&hl=fr')">
+              <div class="img">
+                <img src="img/apps/youtube.jpg">
+              </div>
+              <div class="navname">YouTube</div>
+            </div>
+          </div>
+        </div>  
+
+
+
+
+
+        <div class="home" id="param" style="display: none;">
+          <div class="topsection">
+            <div class="left">
+            </div>  
+            <div class="right" data-aos="fade-left">
+              <div class="searchapp">
+                <input type="text" onkeyup="searchFunction(this)" placeholder="Rechercher un thème...">
+            </div>
+            </div>
+          </div>
+          <div class="bar">
+            <div onclick="changetitle()" class="navelem">
+              <i class="bx bx-text"></i>
+              <div class="navname">Changer titre</div>
+            </div>
+            <div onclick="hidesecs()" class="navelem">
+              <i class="bx bx-time"></i>
+              <div class="navname">Cacher secondes</div>
+            </div>
+            <div onclick="username()" class="navelem">
+              <i class="bx bx-user"></i>
+              <div class="navname">Changer nom</div>
+            </div>
+            <div onclick="localStorage.clear();location.href = 'a.html'" class="navelem">
+              <i class="bx bx-refresh"></i>
+              <div class="navname">Réinitialiser</div>
+            </div>
+          </div>
+          <div class="apps down" data-aos="fade-up">
+            <div class="app" onclick="setbg('/img/bg/amsterdam.jpg')">
+              <div class="imgtheme">
+                <img src="img/bg/amsterdam.jpg">
+              </div>
+              <div class="navname">Amsterdam</div>
+            </div>
+            <div class="app" onclick="setbg('/img/bg/audi.jpg')">
+              <div class="imgtheme">
+                <img src="img/bg/audi.jpg">
+              </div>
+              <div class="navname">Audi</div>
+            </div>
+            <div class="app" onclick="setbg('/img/bg/cherrymc.png')">
+              <div class="imgtheme">
+                <img src="img/bg/cherrymc.png">
+              </div>
+              <div class="navname">Minecraft</div>
+            </div>
+            <div class="app" onclick="setbg('/img/bg/cybertruck.jpg')">
+              <div class="imgtheme">
+                <img src="img/bg/cybertruck.jpg">
+              </div>
+              <div class="navname">Cybertruck</div>
+            </div>
+            <div class="app" onclick="setbg('/img/bg/fortnite.png')">
+              <div class="imgtheme">
+                <img src="img/bg/fortnite.png">
+              </div>
+              <div class="navname">Fortnite</div>
+            </div>
+            <div class="app" onclick="setbg('/img/bg/hypixel.png')">
+              <div class="imgtheme">
+                <img src="img/bg/hypixel.png">
+              </div>
+              <div class="navname">Hypixel</div>
+            </div>
+            <div class="app" onclick="setbg('/img/bg/phare.png')">
+              <div class="imgtheme">
+                <img src="img/bg/phare.png">
+              </div>
+              <div class="navname">Phare</div>
+            </div>
+            <div class="app" onclick="setbg('/img/bg/rocketleague.png')">
+              <div class="imgtheme">
+                <img src="img/bg/rocketleague.png">
+              </div>
+              <div class="navname">Rocket League</div>
+            </div>
+            <div class="app" onclick="setbg('/img/bg/tesla.jpg')">
+              <div class="imgtheme">
+                <img src="img/bg/tesla.jpg">
+              </div>
+              <div class="navname">Tesla</div>
+            </div>
+            <div class="app" onclick="setbg('/img/bg/windows11.jpg')">
+              <div class="imgtheme">
+                <img src="img/bg/windows11.jpg">
+              </div>
+              <div class="navname">Windows 11</div>
+            </div>
+          </div>
+        </div>  
+
+
+
+
+        <div class="bottombar">
+          <div onclick="cleaninput();document.getElementById('jeux').style.display = 'none';document.getElementById('apps').style.display = 'none';document.getElementById('param').style.display = 'none';document.getElementById('home').style.display = 'flex';" class="navelem">
+            <i class="bx bx-home"></i>
+            <div class="navname">Accueil</div>
+          </div>
+          <div onclick="cleaninput();document.getElementById('jeux').style.display = 'flex';document.getElementById('apps').style.display = 'none';document.getElementById('param').style.display = 'none';document.getElementById('home').style.display = 'none';" class="navelem">
+            <i class="bx bx-joystick"></i>
+            <div class="navname">Jeux</div>
+          </div>
+          <div onclick="cleaninput();document.getElementById('jeux').style.display = 'none';document.getElementById('apps').style.display = 'flex';document.getElementById('param').style.display = 'none';document.getElementById('home').style.display = 'none';" class="navelem">
+            <i class="bx bx-grid-alt"></i>
+            <div class="navname">Apps</div>
+          </div>
+          <div onclick="cleaninput();document.getElementById('jeux').style.display = 'none';document.getElementById('apps').style.display = 'none';document.getElementById('param').style.display = 'flex';document.getElementById('home').style.display = 'none';" class="navelem">
+            <i class="bx bx-cog"></i>
+            <div class="navname">Paramètres</div>
+          </div>
+          <div onclick="window.parent.document.getElementById('iframe').style.display = 'none'" class="navelem">
+            <i class="bx bx-calculator"></i>
+            <div class="navname">Calculatrice</div>
+          </div>
+        </div>
+        <script>
+          function hidesecs(){
+            if (localStorage.getItem('hidesecs')===null){
+              localStorage.setItem('hidesecs', '1')
+              document.getElementById('sec').style.display = 'none'
+            }else{
+              localStorage.removeItem('hidesecs')
+              document.getElementById('sec').style.display = 'unset'
+            }
+          }
+        </script>
+        <script>
+        
+        function searchFunction(input) {
+    let filter = input.value.toUpperCase();
+    let cards = document.getElementsByClassName('app');
+
+    for (let i = 0; i < cards.length; i++) {
+        let title = cards[i].getElementsByClassName('navname')[0];
+        let txtValue = title.textContent || title.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+              </script>
+        <script>
+          function setbg(url){
+            localStorage.setItem('bg', url)
+            document.body.style.backgroundImage = "url('" + localStorage.getItem('bg') + "')"
+          }
+          function cleaninput(){
+    var elements = document.getElementsByTagName("input");
+for (var ii=0; ii < elements.length; ii++) {
+  if (elements[ii].type == "text") {
+    elements[ii].value = "";
+  } }
+  let cards = document.getElementsByClassName('app');
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].style.display = "";
+    }
+}
+        </script>
+    
+  <script>function displayDateTime() {
+    const currentDate = new Date();
+    
+    const days = ['DIMANCHE', 'LUNDI', 'MARDI', 'MERCREDI', 'JEUDI', 'VENDREDI', 'SAMEDI'];
+    const dayOfWeek = days[currentDate.getDay()];
+  
+    const months = ['JANVIER', 'FÉVRIER', 'MARS', 'AVRIL', 'MAI', 'JUIN', 'JUILLET', 'AOÛT', 'SEPTEMBRE', 'OCTOBRE', 'NOVEMBRE', 'DÉCEMBRE'];
+    const month = months[currentDate.getMonth()];
+  
+    const date = currentDate.getDate();
+    const year = currentDate.getFullYear();
+  
+    let hours = currentDate.getHours();
+    let minutes = currentDate.getMinutes();
+    let seconds = currentDate.getSeconds();
+  
+    hours = (hours < 10 ? '0' : '') + hours;
+    minutes = (minutes < 10 ? '0' : '') + minutes;
+    seconds = (seconds < 10 ? '0' : '') + seconds;
+  
+    document.getElementById('date').innerHTML = `${dayOfWeek} ${date} ${month} ${year}`;
+    document.getElementById('hm').innerHTML = `${hours}:${minutes}`;
+    document.getElementById('sec').innerHTML = `:${seconds}`;
+  }
+  
+  setInterval(displayDateTime, 1000);
+  document.getElementById('username').innerHTML = localStorage.getItem('username')
+  displayDateTime();</script>
+  <script>
+     if (localStorage.getItem('hidesecs')==="1"){
+      document.getElementById('sec').style.display = 'none'
+}
+  </script>
+    <script src="uv/uv.bundle.js"></script>
+    <script src="uv/uv.config.js"></script>
+    <script src="index.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

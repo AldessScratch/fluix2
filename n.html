@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluix | Erreur 404</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="/img/logo.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+  <script>
+    AOS.init(); 
+    if (localStorage.getItem('bg')===null){
+  localStorage.setItem('bg', '/img/bg/amsterdam.jpg')
+}
+    document.body.style.backgroundImage = "url('" + localStorage.getItem('bg') + "')"
+    </script>
+        <div class="home">
+          <div id="title" data-aos="fade-down">ERREUR</div>
+          <div id="time" data-aos="zoom-in">46</div>
+          <div id='text' data-aos='zoom-in'>Accès non autorisé</div>
+          <div class="bottombar">
+            <div onclick="window.parent.document.getElementById('iframe').style.display = 'none'" class="navelem">
+              <i class="bx bx-calculator"></i>
+              <div class="navname">Calculatrice</div>
+            </div>
+          </div>
+        </div>  
+    <script src="uv/uv.bundle.js"></script>
+    <script src="uv/uv.config.js"></script>
+    <script src="index.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
