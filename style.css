@@ -396,5 +396,5 @@ body {
 .DraggableDiv i {
   font-size: 22px;
   margin: 10px;
-  filter: drop-shadow(1px 1px 2px var(--lighter));
+  filter: drop-shadow(1px 1px 2px rgb(0 0 0 / 0.4));
 }
