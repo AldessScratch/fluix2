@@ -383,7 +383,7 @@ body {
   position: absolute;
   height: 45px;
   width: 270px;
-  background: var(--navbar);
+  background: #23232350;
   backdrop-filter: blur(6px);
  -webkit-backdrop-filter: blur(6px);
   border-radius: 20px;
