@@ -23,7 +23,7 @@
     </script>
 <div class="topsection">
   <div class="left" data-aos="fade-right">
-    <div id="heure"><span id="hm"></span><span id="sec"></span></div>
+    <div id="heure"><span id="hm"></div>
     <div id="date"></div>
   </div>  
   <div class="right" data-aos="fade-left">
@@ -199,10 +199,6 @@
             </div>
           </div>
           <div class="bar">
-            <div onclick="hidesecs()" class="navelem">
-              <i class="bx bx-time"></i>
-              <div class="navname">Cacher secondes</div>
-            </div>
             <div onclick="username()" class="navelem">
               <i class="bx bx-user"></i>
               <div class="navname">Changer nom</div>
@@ -302,17 +298,6 @@
           </div>
         </div>
         <script>
-          function hidesecs(){
-            if (localStorage.getItem('hidesecs')===null){
-              localStorage.setItem('hidesecs', '1')
-              document.getElementById('sec').style.display = 'none'
-            }else{
-              localStorage.removeItem('hidesecs')
-              document.getElementById('sec').style.display = 'unset'
-            }
-          }
-        </script>
-        <script>
         
         function searchFunction(input) {
     let filter = input.value.toUpperCase();
@@ -369,17 +354,11 @@ for (var ii=0; ii < elements.length; ii++) {
   
     document.getElementById('date').innerHTML = `${dayOfWeek} ${date} ${month} ${year}`;
     document.getElementById('hm').innerHTML = `${hours}:${minutes}`;
-    document.getElementById('sec').innerHTML = `:${seconds}`;
   }
   
   setInterval(displayDateTime, 1000);
   document.getElementById('username').innerHTML = localStorage.getItem('username')
   displayDateTime();</script>
-  <script>
-     if (localStorage.getItem('hidesecs')==="1"){
-      document.getElementById('sec').style.display = 'none'
-}
-  </script>
     <script src="uv/uv.bundle.js"></script>
     <script src="uv/uv.config.js"></script>
     <script src="index.js"></script>
