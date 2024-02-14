@@ -31,32 +31,6 @@ function isNumeric(str) {
   return /^[A-Z]+$/.test(str);
 }
 
-function changetitle() {
-  const maxCharacters = 10;
-  const minCharacters = 3;
-  let result = prompt("Entrez le titre en majuscule");
-  if (isNumeric(result)) {
-    localStorage.setItem('title', result);
-    location.href = 'a.html';
-  } else {
-    alert("Le titre ne doit contenir que des majuscules");
-    changetitle();
-  }
-if (result==='HIT' + 'LER' || result==='BI' + 'TE' || result==='PE' + 'NIS' || result==='ANU' + 'S' || result==='PO' + 'RN' + 'H' + 'UB') {
-  localStorage.setItem('banned', '1')
-    changetitle();
-  }
-  if (result.length > maxCharacters) {
-    alert("Le titre ne doit pas dépasser 10 caractères.");
-    changetitle();
-    return;
-  }
-  if (result.length < minCharacters) {
-    alert("Le titre doit avoir au moins 3 caractères.");
-    changetitle();
-    return;
-  }
-}
 function fetchip(){
   let echolog = {};
   fetch("https://wtfismyip.com/json")
