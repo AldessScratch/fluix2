@@ -1,8 +1,7 @@
-
-﻿(function ($) {
+(function ($) {
 
     //VDWWD: declare some extra variables
-    var margin = 10;
+    var margin = 20;
     var extra_margin_right = 0;
     var extra_margin_bottom = 0;
     var z_index = 100;
@@ -89,7 +88,7 @@
             $element.bind("touchmove.draggableTouch", function (e) {
                 e.preventDefault();
                 var orig = e.originalEvent;
-
+            
                 for (var i = 0; i < orig.changedTouches.length; i++) {
                     var touch = orig.changedTouches[i];
                     // the only touchend/touchcancel event we care about is the touch
@@ -97,17 +96,22 @@
                     if (touch.identifier != draggingTouchId) {
                         continue;
                     }
-
-                    //$(this).css({
-                    //    top: touch.pageY - offset.y,
-                    //    left: touch.pageX - offset.x
-                    //});
-
+            
                     //VDWWD: use the setCss function
                     setCss($element, touch.pageY - offset.y, touch.pageX - offset.x);
+            
+                    // Check if the floating menu bar is close to the left or right edges
+                    var distanceFromLeft = touch.pageX - offset.x;
+                    var distanceFromRight = window.innerWidth - (touch.pageX - offset.x + $element.width());
+            
+                    if (distanceFromLeft < 10 || distanceFromRight < 280) { // 270px (menu width) + 10px (margin)
+                        $element.addClass('vertical');
+                    } else {
+                        $element.removeClass('vertical');
+                    }
                 }
             });
-
+            
             $element.bind("touchend.draggableTouch touchcancel.draggableTouch", end);
         });
 
@@ -135,11 +139,6 @@
             var offset = null;
 
             var move = function (e) {
-                //$element.css({
-                //    top: e.pageY - offset.y,
-                //    left: e.pageX - offset.x,
-                //});
-
                 //VDWWD: use the setCss function
                 setCss($element, e.pageY - offset.y, e.pageX - offset.x);
             };
@@ -169,9 +168,6 @@
                 //VDWWD: move div to top with z-index
                 z_index++;
                 $element.css('z-index', z_index);
-
-                //VDWWD: turned off preventDefault otherwise input elements in the div won't work
-                //e.preventDefault();
             });
         });
 
@@ -201,4 +197,5 @@
             left: left,
         });
     }
+
 })(jQuery);

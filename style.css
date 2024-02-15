@@ -379,13 +379,29 @@ body {
   top: 10px;
   position: absolute;
   height: 45px;
-  width: 270px;
+  width: 230px;
+  background: #23232350;
+  backdrop-filter: blur(6px);
+ -webkit-backdrop-filter: blur(6px);
+  border-radius: 20px;
+  color: #fff;
+}.vertical {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  top: 10px;
+  position: absolute;
+  flex-direction: column;
+  height: 230px;
+  width: 45px;
   background: #23232350;
   backdrop-filter: blur(6px);
  -webkit-backdrop-filter: blur(6px);
   border-radius: 20px;
   color: #fff;
 }
+
 .DraggableDiv a {
   color: #fff;
   margin: 0;
