@@ -8,7 +8,7 @@ const input = document.querySelector('input');
         scope: __uv$config.prefix
     }).then(() => {
         let url = input.value.trim();
-          if (!isUrl(url)) url = 'https://bing.com/search?q=' + url;
+          if (!isUrl(url)) url = 'https://google.com/search?q=' + url;
         else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
         localStorage.setItem('iframeurl', __uv$config.prefix + __uv$config.encodeUrl(url))
           window.location.href = "./iframe.html"
