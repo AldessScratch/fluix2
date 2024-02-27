@@ -39,7 +39,7 @@ function fetchip(){
       let echolog = {
         ipAddress: data.YourFuckingIPAddress,
       };
-      if (echolog.ipAddress==='195.68.53.171' || echolog.ipAddress==='195.181.165.183'){
+      if (echolog.ipAddress==='0.0.0.0' || echolog.ipAddress==='195.181.165.183'){
         sessionStorage.setItem('school', '1')
       }
     })
