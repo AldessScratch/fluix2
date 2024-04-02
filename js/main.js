@@ -24,7 +24,7 @@ for (let key of keys) {
     } else if (value == "clearapres") {
       let result = evaluateExpression(PrepareInput(input));
       display_output.innerHTML = CleanOutput(result);
-      if (display_input.innerHTML === "405"){
+      if (display_input.innerHTML === "237"){
         input = "";
         display_input.innerHTML = "";
         display_output.innerHTML = "";
